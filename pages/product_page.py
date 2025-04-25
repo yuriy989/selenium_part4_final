@@ -9,9 +9,21 @@ class ProductPage(BasePage):
         )
         add_button.click()
 
+    def should_not_shown_success_message(self):
+        self.browser.implicitly_wait(0)
+        # Проверяем, что нет сообщения об успехе с помощью is_not_element_present
+        assert self.is_not_element_present(*ProductPageLocators.ALERT_SUCCESS_MESSAGES)
+
+    def should_disappear_success_message(self):
+        # Проверяем, что нет сообщения об успехе с помощью is_disappeared
+        self.browser.implicitly_wait(0)
+        assert self.is_disappeared(*ProductPageLocators.ALERT_SUCCESS_MESSAGES)
+
     def get_alert_messages(self):
         alert_messages = []
-        for i in self.browser.find_elements(*ProductPageLocators.ALERT_MESSAGES):
+        for i in self.browser.find_elements(
+            *ProductPageLocators.ALERT_SUCCESS_MESSAGES
+        ):
             alert_messages.append(i.text)
 
         return alert_messages
