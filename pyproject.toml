@@ -8,3 +8,10 @@ dependencies = [
     "pytest>=8.3.5",
     "selenium>=4.31.0",
 ]
+
+[tool.pytest.ini_options]
+markers = [
+    "step_4",
+    "step_6",
+    "step_8",
+]
