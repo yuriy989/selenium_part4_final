@@ -2,6 +2,12 @@
 
 Тут лежит финальный проект из курса [Автоматизация тестирования с помощью Selenium и Python — Stepik](https://stepik.org/575)
 
+- Использовался Python версии 3.12.10
+- Если команда `pip install -r requirements.txt` не сработала
+```
+pip install selenium pytest
+```
+
 - Тесты проверялись только на хроме.
 - Добавлен флаг для запуска тестов без открытия окон браузера
 
@@ -26,5 +32,5 @@ pytest --headless=true
 Команда для клонирования репозитория
 
 ```
-git clone https://github.com/yuriy989/selenium-part4-final.git
+git clone https://github.com/yuriy989/selenium_part4_final.git
 ```
